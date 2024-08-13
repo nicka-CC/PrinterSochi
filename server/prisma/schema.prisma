@@ -1,0 +1,233 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int           @id @default(autoincrement())
+  fullName   String
+  phone      String        @unique
+  email      String        @unique
+  moderate   Boolean       @default(false)
+  cart       Cart[]
+  userPhotos UsersPhotos[]
+  promocode  Promocode[]
+  password   String
+  createdAt  DateTime      @default(now())
+  cartId     Int?
+}
+
+model Prices {
+  id       Int     @id @default(autoincrement())
+  name     String
+  imageUrl String
+  active   Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Promocode {
+  id   Int    @id @default(autoincrement())
+  code String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
+}
+
+model Services {
+  id    Int            @id @default(autoincrement())
+  image String
+  title String
+  sizes SizesServise[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SizesServise {
+  id         Int       @id @default(autoincrement())
+  size       String
+  Services   Services? @relation(fields: [servicesId], references: [id])
+  servicesId Int?
+}
+
+model Advantage {
+  id          Int    @id @default(autoincrement())
+  icon        String
+  title       String
+  description String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// model PhotoReport {
+// }
+
+model PricesProducts {
+  id         Int     @id @default(autoincrement())
+  size       String
+  price      Int
+  count      Int
+  totalCount Int
+  lamination Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// model Parameters{
+//
+// }
+model UsersPhotos {
+  id        Int                 @id @default(autoincrement())
+  images    UsersPhotosImages[]
+  size      String
+  paperType String
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+  User      User?               @relation(fields: [userId], references: [id])
+  userId    Int?
+}
+
+model UsersPhotosImages {
+  id            Int          @id @default(autoincrement())
+  images        String
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  UsersPhotos   UsersPhotos? @relation(fields: [usersPhotosId], references: [id])
+  usersPhotosId Int?
+}
+
+model ReviewsInstagram {
+  id        Int      @id @default(autoincrement())
+  images    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Reviews {
+  id        Int      @id @default(autoincrement())
+  images    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UsersPhotosReviewsImages {
+  id        Int      @id @default(autoincrement())
+  images    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Feetback {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  phone     String
+  status    Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ExplotanCats {
+  id     Int    @id @default(autoincrement())
+  image  String
+  title  String
+  status String
+  price  Int
+
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  UsersExplotanCats   UsersExplotanCats? @relation(fields: [usersExplotanCatsId], references: [id])
+  usersExplotanCatsId Int?
+}
+
+model UsersExplotanCats {
+  id           Int            @id @default(autoincrement())
+  explotanCats ExplotanCats[]
+  fullName     String
+  phone        Int
+  status       String
+  totalprice   Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PhotographerPortfolio {
+  id       Int                           @id @default(autoincrement())
+  contacts Contacts[]
+  photos   PhotosPhotographerPortfolio[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PhotosessionsPhotographer {
+  id        Int                           @id @default(autoincrement())
+  photos    PhotosPhotographerPortfolio[]
+  title     String
+  createdAt DateTime                      @default(now())
+  updatedAt DateTime                      @updatedAt
+}
+
+model PhotosPhotographerPortfolio {
+  id     Int    @id @default(autoincrement())
+  photos String
+
+  createdAt                   DateTime                   @default(now())
+  updatedAt                   DateTime                   @updatedAt
+  PhotographerPortfolio       PhotographerPortfolio?     @relation(fields: [photographerPortfolioId], references: [id])
+  photographerPortfolioId     Int?
+  PhotosessionsPhotographer   PhotosessionsPhotographer? @relation(fields: [photosessionsPhotographerId], references: [id])
+  photosessionsPhotographerId Int?
+}
+
+model Contacts {
+  id                      Int                    @id @default(autoincrement())
+  icon                    String
+  about                   String
+  createdAt               DateTime               @default(now())
+  updatedAt               DateTime               @updatedAt
+  PhotographerPortfolio   PhotographerPortfolio? @relation(fields: [photographerPortfolioId], references: [id])
+  photographerPortfolioId Int?
+}
+
+model PhotographerBlog {
+  id        Int                     @id @default(autoincrement())
+  title     String
+  about     String
+  body      String
+  photos    PhotoPhotographerBlog[]
+  createdAt DateTime                @default(now())
+  updatedAt DateTime                @updatedAt
+}
+
+model PhotoPhotographerBlog {
+  id                 Int               @id @default(autoincrement())
+  inage              String
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  PhotographerBlog   PhotographerBlog? @relation(fields: [photographerBlogId], references: [id])
+  photographerBlogId Int?
+}
+
+model Cart {
+  id        Int     @id @default(autoincrement())
+  price     Int
+  title     Int
+  sizes     String?
+  paperType String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
+}
