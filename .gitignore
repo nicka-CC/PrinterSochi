@@ -8,7 +8,7 @@
 
 # testing
 /coverage
-
+/.jetclient
 # next.js
 /.next/
 /out/
