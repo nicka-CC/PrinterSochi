@@ -136,7 +136,7 @@ model Feetback {
   id        Int      @id @default(autoincrement())
   fullName  String
   phone     String
-  status    Boolean
+  status    Boolean? @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
