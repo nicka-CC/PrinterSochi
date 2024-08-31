@@ -114,10 +114,13 @@ model ReviewsInstagram {
 }
 
 model Reviews {
-  id        Int      @id @default(autoincrement())
-  images    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int                        @id @default(autoincrement())
+  images    UsersPhotosReviewsImages[]
+  name      String
+  about     String
+  visible   Boolean                    @default(false)
+  createdAt DateTime                   @default(now())
+  updatedAt DateTime                   @updatedAt
 }
 
 model UsersPhotosReviewsImages {
@@ -125,6 +128,8 @@ model UsersPhotosReviewsImages {
   images    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Reviews   Reviews? @relation(fields: [reviewsId], references: [id])
+  reviewsId Int?
 }
 
 model Feetback {
