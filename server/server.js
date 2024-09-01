@@ -5,6 +5,7 @@ import authRouter from "./routers/auth/authRouter.js"
 import reviewRouter from "./routers/reviews/review/reviewRouter.js";
 import feedbackRouter from "./routers/feedback/feedbackRouter.js"
 import promocodeRouter from "./routers/promocodes/promocodesRouter.js"
+import pricesProductRouter from "./routers/pricesproduct/pricesProductRouter.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 dotenv.config();
@@ -23,6 +24,7 @@ app.use("/auth/", authRouter);
 app.use("/review",reviewRouter);
 app.use("/feedback", feedbackRouter);
 app.use("/promocode", promocodeRouter);
+app.use("/pricesproduct", pricesProductRouter);
 
 
 
