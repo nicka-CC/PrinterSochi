@@ -148,19 +148,16 @@ model ExplotanCats {
   status String
   price  Int
 
-  createdAt           DateTime           @default(now())
-  updatedAt           DateTime           @updatedAt
-  UsersExplotanCats   UsersExplotanCats? @relation(fields: [usersExplotanCatsId], references: [id])
-  usersExplotanCatsId Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model UsersExplotanCats {
-  id           Int            @id @default(autoincrement())
-  explotanCats ExplotanCats[]
-  fullName     String
-  phone        Int
-  status       String
-  totalprice   Int
+  id         Int    @id @default(autoincrement())
+  fullName   String
+  phone      Int
+  status     String
+  totalprice Int
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
