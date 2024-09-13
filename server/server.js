@@ -7,6 +7,7 @@ import feedbackRouter from "./routers/feedback/feedbackRouter.js"
 import promocodeRouter from "./routers/promocodes/promocodesRouter.js"
 import pricesProductRouter from "./routers/pricesproduct/pricesProductRouter.js";
 import explotanCatsRouter from "./routers/explotanCats/explotanCatsRouter.js";
+import uEcRouter from "./routers/uec/explotanUserCatsRouter.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 dotenv.config();
@@ -27,8 +28,13 @@ app.use("/feedback", feedbackRouter);
 app.use("/promocode", promocodeRouter);
 app.use("/pricesproduct", pricesProductRouter);
 app.use("/explotan-cats-router", explotanCatsRouter);
+app.use("/uec", uEcRouter);
 
 
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`);
+  next();
+});
 
 app.listen(PORT, () => {
   console.log(`server started, port ${PORT}`);
