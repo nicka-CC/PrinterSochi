@@ -8,6 +8,7 @@ import promocodeRouter from "./routers/promocodes/promocodesRouter.js"
 import pricesProductRouter from "./routers/pricesproduct/pricesProductRouter.js";
 import explotanCatsRouter from "./routers/explotanCats/explotanCatsRouter.js";
 import uEcRouter from "./routers/uec/explotanUserCatsRouter.js";
+import photographerPortfolioRouter from "./routers/photographer/photographerPortfolioRouter.js"
 import path from "path";
 import { fileURLToPath } from 'url';
 dotenv.config();
@@ -29,6 +30,7 @@ app.use("/promocode", promocodeRouter);
 app.use("/pricesproduct", pricesProductRouter);
 app.use("/explotan-cats-router", explotanCatsRouter);
 app.use("/uec", uEcRouter);
+app.use("/photographer-portfolio", photographerPortfolioRouter);
 
 
 app.use((req, res, next) => {
@@ -41,5 +43,5 @@ app.listen(PORT, () => {
 });
 
 //TODO: [first]: предоставление услуги, фотоотчет, цены, оформление заказа, заказать, закаказать обратный звонок, настольные игры, заказать настолку
-//TODO: [second]: спортфолио, услуги, фотосессия, блог, заказать
+//TODO: [second]:  услуги, фотосессия, блог, заказать
 //TODO: [third]: аккаунт для администрирования, аккаунт для заказов клиентов
