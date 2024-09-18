@@ -11,6 +11,7 @@ import uEcRouter from "./routers/uec/explotanUserCatsRouter.js";
 import photographerPortfolioRouter from "./routers/photographer/photographerPortfolioRouter.js"
 import photographerBlogRouter from "./routers/photographer/photographerBlogRouter.js"
 import photosessionPhotographerRouter from "./routers/photographer/photosessionPhotographerRouter.js";
+import cartRouter from "./routers/users/cartRouter.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 dotenv.config();
@@ -34,6 +35,7 @@ app.use("/uec", uEcRouter);
 app.use("/photographer-portfolio", photographerPortfolioRouter);
 app.use("/photographer-blog", photographerBlogRouter);
 app.use("/photosession", photosessionPhotographerRouter);
+app.use("/cart", cartRouter);
 
 
 app.use((req, res, next) => {
