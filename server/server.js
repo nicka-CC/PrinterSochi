@@ -10,6 +10,7 @@ import explotanCatsRouter from "./routers/explotanCats/explotanCatsRouter.js";
 import uEcRouter from "./routers/uec/explotanUserCatsRouter.js";
 import photographerPortfolioRouter from "./routers/photographer/photographerPortfolioRouter.js"
 import photographerBlogRouter from "./routers/photographer/photographerBlogRouter.js"
+import photosessionPhotographerRouter from "./routers/photographer/photosessionPhotographerRouter.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 dotenv.config();
@@ -19,7 +20,6 @@ const PORT = 7777;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-//нужно использовать до остальных роутов
 
 app.use(cors());
 app.use(express.json());
@@ -33,6 +33,7 @@ app.use("/explotan-cats-router", explotanCatsRouter);
 app.use("/uec", uEcRouter);
 app.use("/photographer-portfolio", photographerPortfolioRouter);
 app.use("/photographer-blog", photographerBlogRouter);
+app.use("/photosession", photosessionPhotographerRouter);
 
 
 app.use((req, res, next) => {
@@ -43,7 +44,3 @@ app.use((req, res, next) => {
 app.listen(PORT, () => {
   console.log(`server started, port ${PORT}`);
 });
-
-//TODO: [first]: предоставление услуги, фотоотчет, цены, оформление заказа, заказать, закаказать обратный звонок, настольные игры, заказать настолку
-//TODO: [second]:  услуги, фотосессия, заказать
-//TODO: [third]: аккаунт для администрирования, аккаунт для заказов клиентов
