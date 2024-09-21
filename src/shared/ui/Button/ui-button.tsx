@@ -7,16 +7,13 @@ export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 type VariantsType =
-  | "primary"
-  | "secondary"
-  | "third"
-  | "warning"
-  | "close"
-  | "breadcrumb"
-  | "mini"
-  | "";
+  | "red"
+  | "gray"
+  | "grayv2"
+  | "blue"
+  | "green";
 const Button = (props: Button) => {
-  const { className, children, theme = "primary", type = "default", ...otherProps } = props;
+  const { className, children, theme = "red", type = "default", ...otherProps } = props;
   return (
     <button
       className={classNames(styles.buttonD, { [styles[theme]]: true }, [className || ""])}

@@ -1,75 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 .buttonD {
   background: var(--bg-button-color);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   border-radius: 5px;
   color: var(--color);
   border: none;
   padding: var(--padding);
   display: flex;
+  border: var(--border);
   align-items: center;
   justify-content: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100,
+          "YTLC" 500;
 }
-.primary {
-  --bg-button-color: white;
-  --color: #003d6c;
-  --padding: 5px 10px;
-}
-.primary:hover {
-  --bg-button-color: #003d6c;
-  --color: #eaf5ff;
-}
-.secondary {
-  --bg-button-color: #003d6c;
+.red {
+  --bg-button-color: #FF284C;
   --color: white;
-  --padding: 5px 10px;
+  --padding: 18px 32px;
 }
-.secondary:hover {
-  --bg-button-color: #003055;
+.red:hover {
+  --bg-button-color: #FF627C;
+  --color: #white;
+}
+.red:active{
+  --bg-button-color: #D10628;
+  --color: ;
+}
+.gray {
+  --padding: 18px 32px;
+  --bg-button-color: #ffffff;
+  --color: #000000;
+  --border: 1px solid black
+}
+.gray:hover {
+  --bg-button-color: #272B38;
+  --color: white;
+  --border: none;
+}
+.gray:active{
+  --bg-button-color: #181a22;
+  --color: white;
+  --border: none;
+}
+.grayv2 {
+  --padding: 18px 32px;
+  --bg-button-color: #3E414E;
+  --color: white;
+  --border: 1px solid black
+}
+.grayv2:hover {
+  --bg-button-color: #272B38;
+  --color: white;
+  --border: none;
+}
+.grayv2:active{
+  --bg-button-color: #181a22;
+  --color: white;
+  --border: none;
+}
+.blue {
+  --padding: 10px 20px;
+  --bg-button-color: #467EDB;
   --color: white;
 }
-.third {
-  --bg-button-color: #eaf5ff;
-  --color: #003d6c;
-  --padding: 5px 10px;
-}
-.third:hover {
-  --bg-button-color: #003d6c;
+.blue:hover {
+  --bg-button-color: #213d6a;
   --color: white;
 }
-.warning {
-  --bg-button-color: #c80000;
+.blue:active{
+  --bg-button-color: #162947;
   --color: white;
-  --padding: 5px 10px;
-}
-.warning:hover {
-  --bg-button-color: #8d0000;
-  --color: #eaf5ff;
-}
-.close {
-  --bg-button-color: white;
-  --color: #003d6c;
-  --padding: 0px;
-}
-.close:hover {
-  --bg-button-color: #003d6c;
-  --color: #eaf5ff;
-  --padding: 0px;
-}
 
-.breadcrumb {
-  --color: #a3a3a3;
 }
-.breadcrumb:hover {
-  --color: #003d6c;
-}
-.mini {
-  --bg-button-color: #eaf5ff;
-  --color: #003d6c;
-  --padding: 3px 5px;
-}
-.mini:hover {
-  --bg-button-color: #003d6c;
+.green {
+  --padding: 10px 20px;
+  --bg-button-color: #55BC44;
   --color: white;
-  --padding: 3px 5px;
+}
+.green:hover {
+  --bg-button-color: #7bbd6c;
+  --color: white;
+}
+.green:active{
+  --bg-button-color: #4a9f3c;
+  --color: white;
 }

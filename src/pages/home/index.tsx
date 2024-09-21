@@ -1,9 +1,10 @@
 'use client'
 import Input from "@/src/shared/ui/Input/ui-input";
 import styles from "@/src/pages/home/index.module.css";
-import { Checkbox } from "@/src/shared/ui/index";
+import { Checkbox, Button } from "@/src/shared/ui/index";
 import Search from "@/src/widgets/search";
 import { useEffect, useState } from "react";
+
 /**
  * @page Home
  */
@@ -25,6 +26,7 @@ const HomePage = () => {
         placeholder="Primary Input"
       />
       <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
+<Button theme={"green"}>Кнопка</Button>
     </div>
   );
 };
