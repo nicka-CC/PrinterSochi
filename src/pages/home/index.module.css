@@ -12,8 +12,24 @@
   padding: 20px 0px;
 }
 
+/* ui-table.module.css */
 .table {
-  width: 80%;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table_contain {
+  overflow-x: auto;
 }
 
 .input {
