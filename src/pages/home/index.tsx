@@ -21,12 +21,11 @@ const HomePage = () => {
       <Input
         className={styles.input}
         type="text"
-        theme="secondary"
-        icon="right"
+        theme="primary"
         placeholder="Primary Input"
+        error={true}
       />
       <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
-<Button theme={"green"}>Кнопка</Button>
     </div>
   );
 };

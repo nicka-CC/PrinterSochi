@@ -4,29 +4,24 @@
   justify-content: center;
   background: var(--bg-input-color);
   color: var(--color);
-  height: 40px;
+  height: 61px;
   border-radius: 4px;
+  font-size: 18px;
   border: 1.5px solid var(--border-color);
 }
 .input {
   width: 100%;
-  padding: 0px 8px;
+  padding: 0px 18px;
 }
 .secondary {
   --bg-input-color: white;
-  --border-color: #003d6c;
+  --border-color: #4A8FB6;
   --color: black;
-  .span {
-    display: flex;
-    align-items: center;
-    padding: 0px 8px;
-  }
 }
 .primary {
   --bg-input-color: white;
-  --border-color: #003d6c;
+  --border-color: white;
   --color: black;
-  padding: 0px 10px;
 }
 .error {
   --border-color: #ef4444;
