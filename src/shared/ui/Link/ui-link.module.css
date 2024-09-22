@@ -1,0 +1,10 @@
+.link{
+    font-size: 25px;
+    color: #4A8FB6;
+}
+.link:hover{
+    color:#467184;
+}
+.link:active{
+    color: #86B2CB;
+}

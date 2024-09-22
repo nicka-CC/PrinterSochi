@@ -1,7 +1,7 @@
 'use client'
 import Input from "@/src/shared/ui/Input/ui-input";
 import styles from "@/src/pages/home/index.module.css";
-import {Checkbox, Button, Table, TableCell, TableHead, TableBody, TableRow, TableHeader} from "@/src/shared/ui/index";
+import {Checkbox,Link, Button, Table, TableCell, TableHead, TableBody, TableRow, TableHeader} from "@/src/shared/ui/index";
 import Search from "@/src/widgets/search";
 import { useEffect, useState } from "react";
 
@@ -47,6 +47,7 @@ const HomePage = () => {
         </TableBody>
       </Table>
       <Checkbox theme={"primary"}/>
+      <Link>ssjnsjnj</Link>
     </div>
   );
 };
