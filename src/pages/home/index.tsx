@@ -46,6 +46,7 @@ const HomePage = () => {
           </TableRow>
         </TableBody>
       </Table>
+      <Checkbox theme={"primary"}/>
     </div>
   );
 };

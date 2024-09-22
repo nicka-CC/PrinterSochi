@@ -1,30 +1,43 @@
-.input {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  appearance: none;
-  background: #fff;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  user-select: none;
+.primary{
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+    appearance: none;
+    background: #7E8189;
+    border: 5px solid #DBDBDB;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.primary:checked {
+  background-color: #FF284C;
+}
+.secondary {
+    cursor: pointer;
+    width: 59px; /* Новая ширина контейнера */
+    height: 33px; /* Новая высота контейнера */
+    appearance: none;
+    background-color: #DBDBDB;
+    border-radius: 33px; /* Закругляем под высоту контейнера */
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
-.input:checked {
-  background-color: #fff;
-  border-color: #003d6c;
+.secondary::before {
+    content: '';
+    position: absolute;
+    width: 23px; /* Ширина круга */
+    height: 23px; /* Высота круга */
+    background-color: #7E8189;
+    border-radius: 50%;
+    top: 5px;  /* Центрируем круг по вертикали */
+    left: 5px; /* Стартовое положение круга */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.input:checked::after {
-  content: "";
-  position: absolute;
-  left: 3.9px;
-  top: 4.2px;
-  transform: rotate(-45deg) scaleX(-1);
-  width: 14px;
-  height: 9px;
-  border: solid #003d6c;
-  border-width: 0 2.6px 2.6px 0;
+.secondary:checked::before {
+    transform: translateX(26px); /* Перемещаем круг вправо */
+    background-color: #FF284C; /* Изменяем цвет круга при активации */
 }
+

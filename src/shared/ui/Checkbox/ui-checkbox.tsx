@@ -3,11 +3,13 @@ import classNames from "../../lib/classnames/classnames";
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
+  theme?: VariantsTheme;
 }
+type VariantsTheme = | "primary" | "secondary";
 
-const Checkbox = ({ className, ...props }: CheckboxProps) => {
+const Checkbox = ({ className,theme = "primary", ...props }: CheckboxProps) => {
   return (
-    <input type="checkbox" className={classNames(styles.input, {}, [className || ""])} {...props} />
+    <input type="checkbox" className={classNames(styles.input, { [styles[theme]]: true }, [className || ""])} {...props} />
   );
 };
 
