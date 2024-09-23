@@ -1,19 +1,41 @@
-.header {
-  display: flex;
-  background-color: white;
-  padding: 10px 12.5px;
-  width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.header{
+  color:#272B38;
+  display:flex;
+  background: #fff;
+  padding:15px 147px;
+  font-family: "Nunito Sans", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100,
+          "YTLC" 500;
 }
-.button_name {
+.logo{
+}
+.groupfst{
+  display:flex;
+  /*justify-content: center;*/
+  margin: auto 0;
+  gap: 64px;
   margin-left: auto;
+  color:#272B38;
+}
+.a{
+  color:#272B38;
+}
+.modal{
+  position:absolute;
   background-color: #fff;
+  top: 10%;
+  right: 10%;
+  border-radius: 10px;
 }
-.button_name:hover {
-  color: #003d6c;
-  background-color: #eaf5ff;
+.modalString{
+  padding: 10px 25px;
+  text-align: right;
+  color:#272B38;
 }
-.button:hover {
-  .chevron {
-    color: white;
-  }
+.modalString:hover{
+  color: #FF284C;
 }
