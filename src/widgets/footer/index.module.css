@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.footer{
+  color:#fff;
+  display:flex;
+  background:#272B38;
+  padding:38px 147px;
+  font-family: "Nunito Sans", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100,
+          "YTLC" 500;
+}
+.elements{
+  color: #7E8189;
+  font-size: 14px;
+}
+.elements:hover{
+  color:white;
+}
+.mainElements{
+  font-size:16px;
+  color:white;
+}
+.mainElements:hover{
+  color: #7E8189;
+}
+.number{
+  font-size: 24px;
+}
